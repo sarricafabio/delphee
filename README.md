@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Delphee%20Design%20System/assets/delphee-banner.svg" alt="Delphee" width="280">
+  <img src="delphee-banner.svg" alt="Delphee" width="280">
 </p>
 
 # Delphee
