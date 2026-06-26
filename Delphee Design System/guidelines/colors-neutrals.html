@@ -1,0 +1,26 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Neutrals — ink & lines" subtitle="Near-black ink with a hint of cool warmth; hairlines for division" -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg); }
+  .row { display: flex; gap: 14px; }
+  .sw { flex: 1; }
+  .chip { height: 56px; border-radius: var(--r-card); border: 1px solid var(--rim); }
+  .nm { font-family: var(--font-body); font-size: var(--t-sm); font-weight: var(--w-medium); color: var(--ink); margin-top: 8px; }
+  .vl { font-family: var(--font-mono); font-size: var(--t-xs); color: var(--ink-3); margin-top: 2px; }
+  .ink { color: var(--on-brand); display:flex; align-items:flex-end; padding:8px; font-family:var(--font-body); font-size:var(--t-xs); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--ink)"><span class="ink">Aa</span></div><div class="nm">--ink</div><div class="vl">primary · 7:1+</div></div>
+    <div class="sw"><div class="chip" style="background:var(--ink-2)"><span class="ink">Aa</span></div><div class="nm">--ink-2</div><div class="vl">secondary</div></div>
+    <div class="sw"><div class="chip" style="background:var(--ink-3)"><span class="ink">Aa</span></div><div class="nm">--ink-3</div><div class="vl">labels · hints</div></div>
+    <div class="sw"><div class="chip" style="background:var(--line-strong)"></div><div class="nm">--line-strong</div><div class="vl">input borders</div></div>
+    <div class="sw"><div class="chip" style="background:var(--line)"></div><div class="nm">--line</div><div class="vl">hairline rules</div></div>
+  </div>
+</body>
+</html>

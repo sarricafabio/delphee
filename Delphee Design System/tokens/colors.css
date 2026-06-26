@@ -1,0 +1,65 @@
+/* ── Colours ──────────────────────────────────────────────────────────
+   OKLCH throughout. Restrained: Tor Vergata green appears on < 1 in 12
+   surfaces (primary actions, session-active marker, success, current tab).
+   Neutrals carry a 0.002–0.006 chroma toward the brand hue (152) for
+   quiet consistency — never enough to read as "greenish gray".
+   Default light; dark mode is a first-class peer.                       */
+
+:root {
+  /* Brand — Tor Vergata green (#007d34) */
+  --brand:        oklch(0.50 0.137 152);   /* primary fill */
+  --brand-strong: oklch(0.43 0.137 152);   /* hover / pressed */
+  --brand-text:   oklch(0.46 0.130 152);   /* links, active labels */
+  --brand-soft:   oklch(0.94 0.045 152);   /* chip bg, hover tint */
+  --on-brand:     oklch(0.99 0 0);         /* text/icon on brand fill */
+
+  /* Neutrals — light */
+  --bg:          oklch(0.985 0.003 90);    /* almost-white, barely warm */
+  --surface:     oklch(1 0 0);             /* cards, panels, modals */
+  --surface-2:   oklch(0.975 0.003 250);   /* header rows, hovers, trays */
+  --ink:         oklch(0.22 0.015 250);    /* primary text */
+  --ink-2:       oklch(0.45 0.012 250);    /* secondary */
+  --ink-3:       oklch(0.60 0.010 250);    /* labels, hints, placeholders */
+  --line:        oklch(0.91 0.005 250);    /* hairline rules */
+  --line-strong: oklch(0.82 0.006 250);    /* input borders */
+
+  /* Semantic */
+  --ok:      oklch(0.50 0.137 152);        /* = brand */
+  --ok-bg:   oklch(0.94 0.045 152);
+  --warn:    oklch(0.62 0.13 65);
+  --warn-bg: oklch(0.96 0.04 80);
+  --bad:     oklch(0.52 0.18 27);
+  --bad-bg:  oklch(0.96 0.03 27);
+  --info:    oklch(0.52 0.12 250);
+  --info-bg: oklch(0.96 0.03 250);
+}
+
+/* ── Dark mode ─────────────────────────────────────────────────────────
+   A first-class peer. Applied via [data-theme="dark"] on <html> — set it
+   explicitly (toggle) or seed it from prefers-color-scheme in a tiny boot
+   script (see ui_kits/.../App.jsx and the snippet in readme.md). Keeping a
+   single registered theme scope (no prefers-color-scheme CSS duplicate)
+   means every dark value is a proper, classified design-system token.      */
+
+:root[data-theme="dark"] {
+  --brand-strong: oklch(0.58 0.14 152);
+  --brand-text:   oklch(0.74 0.14 152);
+  --brand-soft:   oklch(0.28 0.05 152);
+
+  --bg:          oklch(0.16 0.012 250);
+  --surface:     oklch(0.20 0.013 250);
+  --surface-2:   oklch(0.24 0.013 250);
+  --ink:         oklch(0.95 0.005 250);
+  --ink-2:       oklch(0.72 0.010 250);
+  --ink-3:       oklch(0.58 0.010 250);
+  --line:        oklch(0.30 0.010 250);
+  --line-strong: oklch(0.40 0.012 250);
+
+  --ok-bg:   oklch(0.28 0.05 152);
+  --warn:    oklch(0.78 0.12 65);
+  --warn-bg: oklch(0.30 0.05 75);
+  --bad:     oklch(0.72 0.16 27);
+  --bad-bg:  oklch(0.30 0.07 27);
+  --info:    oklch(0.72 0.12 250);
+  --info-bg: oklch(0.30 0.05 250);
+}

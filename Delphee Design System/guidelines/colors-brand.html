@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Brand — Tor Vergata green" subtitle="Used on <1 in 12 surfaces: primary, success, session-active, current tab" -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg); }
+  .row { display: flex; gap: 14px; }
+  .sw { flex: 1; }
+  .chip { height: 64px; border-radius: var(--r-card); border: 1px solid var(--rim); }
+  .nm { font-family: var(--font-body); font-size: var(--t-sm); font-weight: var(--w-medium); color: var(--ink); margin-top: 8px; }
+  .vl { font-family: var(--font-mono); font-size: var(--t-xs); color: var(--ink-3); margin-top: 2px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--brand)"></div><div class="nm">--brand</div><div class="vl">#007d34 · L .50</div></div>
+    <div class="sw"><div class="chip" style="background:var(--brand-strong)"></div><div class="nm">--brand-strong</div><div class="vl">hover / pressed</div></div>
+    <div class="sw"><div class="chip" style="background:var(--brand-text)"></div><div class="nm">--brand-text</div><div class="vl">links · active</div></div>
+    <div class="sw"><div class="chip" style="background:var(--brand-soft)"></div><div class="nm">--brand-soft</div><div class="vl">chip bg · tint</div></div>
+  </div>
+</body>
+</html>

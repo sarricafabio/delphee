@@ -1,0 +1,10 @@
+/* Delphee webfonts — sourced from Google Fonts.
+   Three families, three jobs:
+   - Fraunces        → display (hero greeting, page titles, big numbers)
+   - Hanken Grotesk  → body (all prose, labels, nav, buttons, table headers)
+   - Spline Sans Mono→ data (codes, importi, CFU, table figures)
+   NOTE: shipped as Google Fonts @import for portability. If you need
+   self-hosted binaries, drop the .woff2 files here and replace with
+   @font-face rules pointing at them. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Hanken+Grotesk:wght@400..700&family=Spline+Sans+Mono:wght@400..600&display=swap');

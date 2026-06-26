@@ -1,0 +1,54 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Data — StatusPill, Card & DataTable" subtitle="Status pills · raised card · the workhorse table with mono numerics" -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); }
+  .stack { display: flex; flex-direction: column; gap: 18px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const { StatusPill, Card, DataTable } = window.DelpheeDesignSystem_900988;
+  const cols = [
+    { key: 'corso', header: 'Insegnamento' },
+    { key: 'cfu', header: 'CFU', align: 'right', mono: true, width: 56 },
+    { key: 'voto', header: 'Voto', align: 'right', width: 96, render: r => r.lode
+        ? <StatusPill tone="ok" solid>30 e lode</StatusPill>
+        : <span style={{fontFamily:'var(--font-mono)'}}>{r.voto}</span> },
+    { key: 'esito', header: 'Esito', width: 120, render: r => <StatusPill tone={r.tone}>{r.esito}</StatusPill> },
+    { key: 'data', header: 'Data', align: 'right', mono: true, nowrap: true },
+  ];
+  const rows = [
+    { corso: 'Analisi Matematica I', cfu: 9, voto: 28, esito: 'Superato', tone: 'ok', data: '12/06/25' },
+    { corso: 'Fisica Generale', cfu: 12, lode: true, esito: 'Superato', tone: 'ok', data: '04/02/25' },
+    { corso: 'Programmazione', cfu: 9, voto: '—', esito: 'In corso', tone: 'info', data: '—' },
+  ];
+  function Demo() {
+    return (
+      <div className="stack">
+        <div className="row">
+          <StatusPill tone="brand">Attiva</StatusPill>
+          <StatusPill tone="ok">Superato</StatusPill>
+          <StatusPill tone="bad">Non superato</StatusPill>
+          <StatusPill tone="warn">Scaduta</StatusPill>
+          <StatusPill tone="info">In corso</StatusPill>
+          <StatusPill tone="neutral">Assente</StatusPill>
+          <StatusPill tone="ok" solid>30 e lode</StatusPill>
+        </div>
+        <DataTable columns={cols} rows={rows} />
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

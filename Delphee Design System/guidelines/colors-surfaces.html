@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Surfaces — bg, surface, dark peer" subtitle="Barely-warm off-white page; pure-white cards float on it. Dark is a peer." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg); }
+  .row { display: flex; gap: 14px; align-items: stretch; }
+  .sw { flex: 1; }
+  .chip { height: 64px; border-radius: var(--r-card); border: 1px solid var(--line); display:flex; align-items:center; justify-content:center; }
+  .nm { font-family: var(--font-body); font-size: var(--t-sm); font-weight: var(--w-medium); color: var(--ink); margin-top: 8px; }
+  .vl { font-family: var(--font-mono); font-size: var(--t-xs); color: var(--ink-3); margin-top: 2px; }
+  .dark { background:#15191e; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--bg)"><span style="width:40px;height:30px;background:var(--surface);border:1px solid var(--line);border-radius:6px;box-shadow:var(--elev-1)"></span></div><div class="nm">--bg</div><div class="vl">page · off-white</div></div>
+    <div class="sw"><div class="chip" style="background:var(--surface)"></div><div class="nm">--surface</div><div class="vl">cards · pure white</div></div>
+    <div class="sw"><div class="chip" style="background:var(--surface-2)"></div><div class="nm">--surface-2</div><div class="vl">header rows · trays</div></div>
+    <div class="sw" data-theme="dark"><div class="chip" style="background:var(--bg)"><span style="width:40px;height:30px;background:var(--surface);border:1px solid var(--line);border-radius:6px"></span></div><div class="nm" style="color:#e9edf2">dark peer</div><div class="vl">[data-theme=dark]</div></div>
+  </div>
+</body>
+</html>

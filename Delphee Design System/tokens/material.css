@@ -1,0 +1,56 @@
+/* ── Material & depth — "Liquid Glass" ─────────────────────────────────
+   A dimensional-but-minimal material. Glass is confined to chrome; depth
+   is carried by this coherent token set; body text never gets the material
+   (readability + WCAG contrast unchanged from a flat system).
+
+   Three roles:
+   1. Ambient field   — a fixed, faint light environment (body::before)
+   2. Glass chrome    — translucent + backdrop-filter, specular top edge
+   3. Tiles & wells   — raised containers / recessed controls            */
+
+:root {
+  /* Legacy flat shadows (kept for legacy callers) */
+  --shadow-1: 0 1px 2px oklch(0.22 0.015 250 / 0.06);
+  --shadow-2: 0 6px 24px oklch(0.22 0.015 250 / 0.10);
+
+  /* Glass chrome */
+  --glass:      oklch(1 0 0 / 0.72);
+  --glass-blur: saturate(180%) blur(20px); /* @kind other */
+  --edge-hi:    inset 0 1px 0 oklch(1 0 0 / 0.65); /* @kind shadow */
+  --rim:        oklch(0.91 0.005 250 / 0.9);         /* hairline tile border */
+
+  /* Raised tile (cards, tables, list containers) */
+  --sheen-top:  oklch(1 0 0);
+  --sheen-bot:  oklch(0.992 0.002 250);
+  --elev-1:     0 1px 2px oklch(0.22 0.015 250 / 0.05),
+                0 4px 12px oklch(0.22 0.015 250 / 0.06);
+  --elev-2:     0 2px 6px oklch(0.22 0.015 250 / 0.08),
+                0 16px 40px oklch(0.22 0.015 250 / 0.12);
+
+  /* Recessed well (inputs, filter tray, inline code) */
+  --well: inset 0 1px 2px oklch(0.22 0.015 250 / 0.07), inset 0 0 0 1px oklch(0.91 0.005 250 / 0.6); /* @kind shadow */
+
+  /* Glossy primary button */
+  --brand-glow: 0 4px 14px oklch(0.50 0.137 152 / 0.30);
+
+  /* Ambient field (body::before) */
+  --ambient: radial-gradient(120% 80% at 50% -10%, oklch(0.70 0.05 250 / 0.05), transparent 60%), radial-gradient(60% 50% at 110% 10%, oklch(0.55 0.10 152 / 0.045), transparent 70%); /* @kind other */
+
+  /* Motion */
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="dark"] {
+  --glass:     oklch(0.20 0.013 250 / 0.66);
+  --edge-hi:   inset 0 1px 0 oklch(1 0 0 / 0.10); /* @kind shadow */
+  --rim:       oklch(0.40 0.012 250 / 0.7);
+  --sheen-top: oklch(0.225 0.013 250);
+  --sheen-bot: oklch(0.205 0.013 250);
+  --elev-1:    0 1px 2px oklch(0 0 0 / 0.30), 0 4px 12px oklch(0 0 0 / 0.35);
+  --elev-2:    0 2px 6px oklch(0 0 0 / 0.40), 0 16px 40px oklch(0 0 0 / 0.50);
+  --well: inset 0 1px 2px oklch(0 0 0 / 0.40), inset 0 0 0 1px oklch(0.40 0.012 250 / 0.5); /* @kind shadow */
+  --brand-glow: 0 4px 14px oklch(0.50 0.137 152 / 0.40);
+  --ambient: radial-gradient(120% 80% at 50% -10%, oklch(0.70 0.06 250 / 0.10), transparent 60%), radial-gradient(60% 50% at 110% 10%, oklch(0.60 0.12 152 / 0.10), transparent 70%); /* @kind other */
+}

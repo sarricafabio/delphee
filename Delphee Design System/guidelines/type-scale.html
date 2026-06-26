@@ -1,0 +1,25 @@
+<!-- @dsCard group="Type" viewport="700x260" name="Type scale" subtitle="Fixed rem scale, no clamps — 11px micro to 48px hero" -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px 24px; background: var(--surface); font-family: var(--font-body); }
+  .r { display: flex; align-items: baseline; gap: 16px; padding: 3px 0; }
+  .r .tok { width: 64px; font-family: var(--font-mono); font-size: var(--t-xs); color: var(--ink-3); flex-shrink: 0; }
+  .r .px { width: 44px; font-family: var(--font-mono); font-size: var(--t-xs); color: var(--ink-3); flex-shrink: 0; }
+  .r .sp { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style>
+</head>
+<body>
+  <div class="r"><span class="tok">3xl</span><span class="px">48</span><span class="sp" style="font-size:var(--t-3xl)">Bentornato</span></div>
+  <div class="r"><span class="tok">2xl</span><span class="px">32</span><span class="sp" style="font-size:var(--t-2xl)">Riepilogo carriera</span></div>
+  <div class="r"><span class="tok">xl</span><span class="px">24</span><span class="sp" style="font-size:var(--t-xl)">Ultimi esami sostenuti</span></div>
+  <div class="r"><span class="tok">lg</span><span class="px">18</span><span class="sp" style="font-size:var(--t-lg)">Pannello tasse e pagamenti</span></div>
+  <div class="r"><span class="tok">md</span><span class="px">16</span><span class="sp" style="font-size:var(--t-md)">Body — il testo di lettura predefinito</span></div>
+  <div class="r"><span class="tok">sm</span><span class="px">14</span><span class="sp" style="font-size:var(--t-sm)">Celle di tabella dense, testo di aiuto</span></div>
+  <div class="r"><span class="tok">xs</span><span class="px">12</span><span class="sp" style="font-size:var(--t-xs)">Etichette chip, didascalie</span></div>
+  <div class="r"><span class="tok">2xs</span><span class="px">11</span><span class="sp" style="font-size:var(--t-2xs)">Micro-etichette, pedici di codice</span></div>
+</body>
+</html>

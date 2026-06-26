@@ -1,0 +1,36 @@
+/* ── Typography ────────────────────────────────────────────────────────
+   Three families, three jobs. Italian warmth from the display serif;
+   friendly workhorse from the body grotesque; clear figures from the mono.
+   Fixed rem scale, no clamps — this is a product UI at consistent DPI.    */
+
+:root {
+  /* Families */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:    'Hanken Grotesk', -apple-system, system-ui, sans-serif;
+  --font-mono:    'Spline Sans Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Size scale */
+  --t-2xs: 0.6875rem;  /* 11px — micro labels, code subscripts */
+  --t-xs:  0.75rem;    /* 12px — chip labels, captions */
+  --t-sm:  0.875rem;   /* 14px — dense table cells, helper text */
+  --t-md:  1rem;       /* 16px — body, inputs, default cell */
+  --t-lg:  1.125rem;   /* 18px — panel titles */
+  --t-xl:  1.5rem;     /* 24px — page titles */
+  --t-2xl: 2rem;       /* 32px — large page titles, hero greeting */
+  --t-3xl: 3rem;       /* 48px — hero greeting (Fraunces display optical) */
+
+  /* Weights */
+  --w-body:   400; /* @kind font */
+  --w-medium: 500; /* @kind font */
+  --w-bold:   600; /* @kind font */
+  --w-xbold:  700; /* @kind font */
+
+  /* Line-heights */
+  --lh-prose:   1.55; /* @kind font */
+  --lh-heading: 1.30; /* @kind font */
+  --lh-row:     1.45; /* @kind font */
+
+  /* Fraunces optical-size axis helpers (set font-variation-settings) */
+  --fraunces-hero: 'opsz' 144, 'SOFT' 0; /* @kind font */
+  --fraunces-head: 'opsz' 24,  'SOFT' 0; /* @kind font */
+}

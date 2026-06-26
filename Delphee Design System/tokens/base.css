@@ -1,0 +1,44 @@
+/* ── Base ──────────────────────────────────────────────────────────────
+   Minimal global resets + the ambient light field. Consumers get a sane
+   default body (off-white bg, ink text, body font) and the faint liquid
+   environment the glass refracts against. Optional but recommended.      */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--t-md);
+  line-height: var(--lh-prose);
+  font-weight: var(--w-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ambient field — a fixed, faint light environment behind everything.
+   Reads as soft light, never a coloured background. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--ambient);
+}
+
+h1, h2, h3, h4, p, figure { margin: 0; }
+
+a { color: var(--brand-text); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+::selection { background: var(--brand-soft); }
+
+/* Focus-visible: 2px brand ring at 2px offset, everywhere. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
