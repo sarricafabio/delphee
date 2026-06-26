@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc && mkdir -p dist/server/static && cp src/server/static/app.js src/server/static/styles.css src/server/static/delphee-mark.svg src/server/static/unilogo.svg dist/server/static/",
+    "build": "tsc && mkdir -p dist/server/static && cp -r src/server/static/. dist/server/static/",
     "start": "node dist/index.js",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
